@@ -19,7 +19,7 @@ from Ins.views import SignUp
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ins/', include('Ins.urls')),
+    path('', include('Ins.urls')),
     path('auth/', include('django.contrib.auth.urls')),
     path('auth/signup', SignUp.as_view(), name='signup'),
 ]
