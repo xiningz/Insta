@@ -8,13 +8,17 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 from Ins.forms import CustomUserCreationForm
 
+
+
 class HelloWorld(TemplateView):
     template_name = 'test.html'
 
-class PostsView(ListView):
+
+class PostsView(LoginRequiredMixin, ListView):
     model = Post
     template_name = 'index.html'
-
+    login_url = "login"
+    
     # Override get_queryset: only show followings' posts
     def get_queryset(self):
         current_user = self.request.user

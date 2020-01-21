@@ -27,7 +27,7 @@ urlpatterns = [
     path('like', addLike, name='addLike'),
     path('comment', addComment, name='addComment'),
     path('user/<int:pk>/', UserDetailView.as_view(), name='user_detail'),
-     path('edit_profile/<int:pk>/', EditProfile.as_view(), name='edit_profile'),
+    path('edit_profile/<int:pk>/', EditProfile.as_view(), name='edit_profile'),
     path('explore', ExploreView.as_view(), name='explore'),
     path('togglefollow', toggleFollow, name='togglefollow'),
 ]
